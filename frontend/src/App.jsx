@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Signin from "./pages/Signin";
@@ -7,7 +7,7 @@ import SendMoney from "./pages/SendMoney";
 function App() {
   return (
     <>
-    <h1>Go to Sign Up page</h1>
+    <h1>Go to <Link to={'/signup'}>Sign Up</Link> page</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/signup" element={<Signup />} />

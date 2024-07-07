@@ -9,7 +9,7 @@ connectDB();
 
 const app = express();
 
-const allowedOrigins = ["*"];
+const allowedOrigins = ["https://paytm-wallet-client.vercel.app"];
 app.use(
   cors({
     origin: function (origin, callback) {

@@ -101,26 +101,20 @@ const updateUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
   const filter = req.query.filter || "";
+  const currentUserID = req.userId;
 
   const users = await User.find({
-    $or: [
+    $and: [
       {
-        firstName: {
-          $regex: filter,
-        },
+        $or: [
+          { firstName: { $regex: filter, $options: "i" } },
+          { lastName: { $regex: filter, $options: "i" } },
+          { fullName: { $regex: filter, $options: "i" } },
+        ],
       },
-      {
-        lastName: {
-          $regex: filter,
-        },
-      },
-      {
-        fullName: {
-          $regex: filter,
-        },
-      },
+      { _id: { $ne: currentUserID } },
     ],
-  });
+  }).exec();
 
   res.json({
     user: users.map((user) => ({

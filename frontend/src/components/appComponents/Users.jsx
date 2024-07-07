@@ -11,7 +11,7 @@ export const Users = () => {
   useEffect(() => {
     async function getUsers() {
       const response = await axios.get(
-        `http://localhost:3000/api/v1/user/bulk?filter=${searchUser}`,
+        `https://paytm-wallet-server.vercel.app/api/v1/api/v1/user/bulk?filter=${searchUser}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

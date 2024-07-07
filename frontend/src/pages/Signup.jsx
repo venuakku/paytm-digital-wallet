@@ -16,7 +16,7 @@ function Signup() {
 
   async function handleClick() {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/user/signup",
+      "https://paytm-wallet-server.vercel.app/api/v1/user/signup",
       {
         username,
         password,

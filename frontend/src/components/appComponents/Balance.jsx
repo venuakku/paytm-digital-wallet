@@ -8,7 +8,7 @@ export const Balance = ({ value }) => {
   useEffect(() => {
     async function getBalance() {
       const response = await axios.get(
-        "https://paytm-wallet-server.vercel.app/api/v1/api/v1/account/balance",
+        "https://paytm-wallet-server.vercel.app/api/v1/account/balance",
         {
           headers: {
             Authorization: `Bearer ${token}`,
